@@ -3,7 +3,7 @@
 
 using namespace std;
 
-
+//клас описания продукта 
 class Product {
 private:
     string nameProduct;
@@ -64,14 +64,17 @@ public:
 };
 
 
-
+//Корзина покупателя :
 class ShoppingCart{};
 
-
+//Учет заказов :
 class OrderList{};
 
+
+//Учет пользователей :
 class UserList {};
 
+//Оплата и доставка :
 class PayAndDelivery{};
 
 void main() {
