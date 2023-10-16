@@ -65,14 +65,52 @@ public:
 
 
 //Корзина покупателя :
-class ShoppingCart{};
+class ShoppingCart: public Product, public UserList
+{};
 
 //Учет заказов :
 class OrderList{};
 
 
 //Учет пользователей :
-class UserList {};
+class UserList 
+{
+private:
+    string namePerson;
+    string email;
+    int cartNumber;
+public:
+    Person(string namePerson, string email, int cartNumber) : namePerson {namePerson}, email{email}, cartNumber {cartNumber}{}
+    string getNamePerson() 
+    {
+        return namePerson;
+    };
+
+    void setNamePerson(string name) 
+    {
+        this->namePerson = name;
+    }
+
+    string getemail() {
+        return email;
+    };
+
+    void setemail(string email) 
+    {
+        this->email = email;
+    }
+
+    int getcartNumber()
+    {
+        return cartNumber;
+    };
+
+    void setcartNumber(int cartNumber)
+    {
+        this->cartNumber = cartNumber;
+    }
+
+};
 
 //Оплата и доставка :
 class PayAndDelivery{};
