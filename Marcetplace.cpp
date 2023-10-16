@@ -71,14 +71,13 @@ class ShoppingCart: public Product, public UserList
 //Учет заказов :
 class OrderList{};
 
-
-//Учет пользователей :
-class UserList 
+//інформація про одного користувача
+class Person
 {
 private:
     string namePerson;
     string email;
-    int cartNumber;
+    int cartNumber;//джерело для shopingcart
 public:
     Person(string namePerson, string email, int cartNumber) : namePerson {namePerson}, email{email}, cartNumber {cartNumber}{}
     string getNamePerson() 
@@ -107,11 +106,14 @@ public:
 
     void setcartNumber(int cartNumber)
     {
-        this->cartNumber = cartNumber;
+        this->cartNumber = cartNumber
     }
 
 };
 
+//Учет пользователей :
+class UserList 
+{};
 //Оплата и доставка :
 class PayAndDelivery{};
 
