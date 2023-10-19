@@ -1,5 +1,7 @@
 ﻿
 #include <iostream>
+#include <bits/stdc++.h> 
+#include <vector>
 
 using namespace std;
 
@@ -65,27 +67,28 @@ public:
 
 
 //Корзина покупателя :
-class ShoppingCart: public Product, public UserList
-{};
+//class ShoppingCart{};
 
 //Учет заказов :
 class OrderList{};
 
 //інформація про одного користувача
+
+
 class Person
 {
 private:
     string namePerson;
     string email;
-    int cartNumber;//джерело для shopingcart
+    string cartNumber;//джерело для shopingcart
 public:
-    Person(string namePerson, string email, int cartNumber) : namePerson {namePerson}, email{email}, cartNumber {cartNumber}{}
-    string getNamePerson() 
+    Person(string namePerson, string email, string cartNumber) : namePerson {namePerson}, email{email}, cartNumber {cartNumber}{}
+    string getnamePerson() 
     {
         return namePerson;
     };
 
-    void setNamePerson(string name) 
+    void setnamePerson(string name) 
     {
         this->namePerson = name;
     }
@@ -99,26 +102,37 @@ public:
         this->email = email;
     }
 
-    int getcartNumber()
+    string getcartNumber()
     {
         return cartNumber;
     };
 
-    void setcartNumber(int cartNumber)
+    void setcartNumber(string cartNumber)
     {
-        this->cartNumber = cartNumber
+        this->cartNumber = cartNumber;
     }
 
 };
 
 //Учет пользователей :
+template<class Person>
 class UserList 
-{};
+{
+
+};
 //Оплата и доставка :
 class PayAndDelivery{};
 
-void main() {
-    cout << "Hello World";
+int main() {
+    Person a("Antony", "ghjklh@gmail", "123456");
+    Person b("Antony", "ghh@gmail", "1234567");
+    vector<Person> UserList;
+    UserList.push_back (a);
+    UserList.push_back (b);
+    int size = UserList.size();
+
+    cout<<"Elements of the vector array:"<<endl;
+	copy(UserList.begin(), UserList.end(), ostream_iterator<Person>(cout, " "));
 
     Product milk{ "Milk", "cool milk", 28.50, 100 };
     milk.printInfo();
