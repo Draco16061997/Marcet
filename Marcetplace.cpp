@@ -69,9 +69,12 @@ public:
 class ShoppingCart
 {
 private:
-    int userId;
+    //айдишник пользевателя который мы наследуем с юзер лист 
+    int userId; 
     
 public:
+
+    //списк продуктов у пользевателя 
     vector<Product> products;
     ShoppingCart(int userId, vector<Product> products) : userId{ userId }, products{ products }{}
     
