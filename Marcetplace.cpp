@@ -68,10 +68,12 @@ public:
 
 //Корзина покупателя :
 class ShoppingCart
-{
+{private:
+    int userId;
+    vector<string> products;
+
 public:
-    void ShopingList() {
-        vector<Product>list;
+    
 
 
 
@@ -85,7 +87,12 @@ class OrderList{};
 
 
 //Учет пользователей :
-class UserList {};
+class UserList {
+public: 
+
+
+
+};
 
 //Оплата и доставка :
 class PayAndDelivery{};
@@ -102,9 +109,10 @@ void main() {
 
     productList.push_back(milk);
     productList.push_back(beer);
-
-   /* for (const Product& obj : productList) {
-        cout << "Data: " << obj.printInfo() << endl;
+    
+    for (int i; i < productList.size(), i++) 
+    {
+        cout << i << endl;
     }
-   */
+   
 }
