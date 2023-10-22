@@ -1,5 +1,4 @@
-﻿
-#include <iostream>
+﻿#include <iostream>
 #include <vector>
 
 using namespace std;
@@ -68,18 +67,14 @@ public:
 
 //Корзина покупателя :
 class ShoppingCart
-{private:
+{
+private:
     int userId;
-    vector<string> products;
-
-public:
     
-
-
-
-
-    }
-
+public:
+    vector<Product> products;
+    ShoppingCart(int userId, vector<Product> products) : userId{ userId }, products{ products }{}
+    
 };
 
 //Учет заказов :
@@ -87,12 +82,9 @@ class OrderList{};
 
 
 //Учет пользователей :
-class UserList {
-public: 
+class UserList {};
 
 
-
-};
 
 //Оплата и доставка :
 class PayAndDelivery{};
@@ -103,16 +95,29 @@ void main() {
 
     Product milk{ "Milk", "cool milk", 28.50, 100 };
     Product beer{ "beer", "Cool beer", 10.2,100 };
-    milk.printInfo();
-
-    vector<Product> productList;
-
-    productList.push_back(milk);
-    productList.push_back(beer);
-    
-    for (int i; i < productList.size(), i++) 
-    {
-        cout << i << endl;
-    }
+    Product drill{ "Drill", "Super Drill", 100.2, 10 };
    
+
+
+    ShoppingCart Nikita{ 1, {milk, beer, drill} };
+    Nikita.products.push_back(drill);
+    for (int i = 0;
+        i < Nikita.products.size();
+        i++)
+    {
+        cout << "name product: " << Nikita.products[i].getNameProduct() << " | " << "cost: " << Nikita.products[i].getCost() << endl;
+    }
+    
+
+   /* vector<Product> productList = {milk, beer, drill};*/
+
+    
+
+    /*
+    for (int i = 0; i < productList.size(); i++)
+    {
+        cout<<productList[i].getNameProduct();
+        cout<<productList[i].getCost()<<endl;
+    }
+   */
 }
