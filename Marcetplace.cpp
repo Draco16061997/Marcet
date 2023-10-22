@@ -1,5 +1,6 @@
 ﻿
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -35,7 +36,6 @@ public:
     }
 
 
-
     int getCost() {
         return cost;
     };
@@ -64,8 +64,21 @@ public:
 };
 
 
+
+
 //Корзина покупателя :
-class ShoppingCart{};
+class ShoppingCart
+{
+public:
+    void ShopingList() {
+        vector<Product>list;
+
+
+
+
+    }
+
+};
 
 //Учет заказов :
 class OrderList{};
@@ -78,8 +91,20 @@ class UserList {};
 class PayAndDelivery{};
 
 void main() {
-    cout << "Hello World";
+    
+
 
     Product milk{ "Milk", "cool milk", 28.50, 100 };
+    Product beer{ "beer", "Cool beer", 10.2,100 };
     milk.printInfo();
-};
+
+    vector<Product> productList;
+
+    productList.push_back(milk);
+    productList.push_back(beer);
+
+   /* for (const Product& obj : productList) {
+        cout << "Data: " << obj.printInfo() << endl;
+    }
+   */
+}
