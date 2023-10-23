@@ -6,20 +6,20 @@ using namespace std;
 //клас описания продукта 
 class Product {
 private:
-    string nameProduct;
+    string name;
     string ditription;
     float cost;
     int amount;
 public:
-    Product(string nameProduct, string ditription, float cost, int amount) : nameProduct {nameProduct}, ditription {ditription}, cost {cost}, amount {amount}{}
+    Product(string name, string ditription, float cost, int amount) : name {name}, ditription {ditription}, cost {cost}, amount {amount}{}
 
-    string getNameProduct() {
-        return nameProduct;
+    string getname() {
+        return name;
     };
 
-    void setNameProduct(string name) 
+    void setname(string name) 
     {
-        this->nameProduct = name;
+        this->name = name;
     }
 
 
@@ -56,7 +56,7 @@ public:
 
     void printInfo() {
         cout << "========Product INFO==========" << endl;
-        cout << "Name product: " << nameProduct << endl << "discription: " << ditription << endl << "Cost: " << cost << endl << "Amount: " << amount << endl;
+        cout << "Name product: " << name << endl << "discription: " << ditription << endl << "Cost: " << cost << endl << "Amount: " << amount << endl;
         cout << "========Product INFO==========" << endl;
     }
 
@@ -85,9 +85,17 @@ class OrderList{};
 
 
 //Учет пользователей :
-class UserList {};
+class UserList 
+{
+private:
+    int userId;
+public:
+    vector<Person> user;
+    UserList(int userId,vector<Person> user): userId {userId}, user {user}{}
 
+};
 
+class Person{};
 
 //Оплата и доставка :
 class PayAndDelivery{};
@@ -108,7 +116,7 @@ void main() {
         i < Nikita.products.size();
         i++)
     {
-        cout << "name product: " << Nikita.products[i].getNameProduct() << " | " << "cost: " << Nikita.products[i].getCost() << endl;
+        cout << "name product: " << Nikita.products[i].getname() << " | " << "cost: " << Nikita.products[i].getCost() << endl;
     }
     
 
@@ -119,7 +127,7 @@ void main() {
     /*
     for (int i = 0; i < productList.size(); i++)
     {
-        cout<<productList[i].getNameProduct();
+        cout<<productList[i].getname();
         cout<<productList[i].getCost()<<endl;
     }
    */
